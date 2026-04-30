@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using LibraryApp.Models;
+using LibraryApp.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<LibraryContext>(options =>
+    options.UseSqlite("Data Source=library.db"));
 
 var app = builder.Build();
 
