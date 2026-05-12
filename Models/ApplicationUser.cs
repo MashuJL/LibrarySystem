@@ -1,3 +1,10 @@
+/* 
+* ApplicationUser.cs
+*
+* extends IdentityUser for user management.
+* Contains additional properties for user details and navigation to loans.
+*/
+
 using Microsoft.AspNetCore.Identity;
 
 namespace LibraryApp.Models

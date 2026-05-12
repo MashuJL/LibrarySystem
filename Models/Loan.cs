@@ -1,3 +1,9 @@
+/*
+* Loan.cs
+* 
+* Represents a loan transaction in the library system.
+* Contains properties for loan details and navigation to related entities.
+*/
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

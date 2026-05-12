@@ -1,3 +1,11 @@
+/**
+* Book.cs
+* 
+* Represents a book in the library system.
+* Contains properties for book details and availability status.
+* Includes data annotations for validation and database mapping.
+*/
+
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
