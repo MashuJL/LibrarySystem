@@ -1,7 +1,6 @@
 # Library System
-- created by Matthew Cox
+- Created by Matthew Cox
 
 # TODO List
 - [ ] add frontend
-- [ ] develop backend
- 
+- [ ] develop functionality
