@@ -36,5 +36,4 @@ public class Loan
     /* --- Navigation Properties --- */
     public Book Book { get; set; } = null!;
     public ApplicationUser User { get; set; } = null!;
-
 }

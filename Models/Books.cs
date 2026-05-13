@@ -48,5 +48,4 @@ public class Book
 
     /* --- Navigation Properties --- */
     public ICollection<Loan> Loans { get; set; } = new List<Loan>();
-
 }
