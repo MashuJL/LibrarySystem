@@ -1,0 +1,52 @@
+@page
+@model LibraryApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+
+        <div class="card mx-auto shadow"
+             style="max-width: 400px;">
+
+            <div class="card-body text-center">
+
+                <h2 class="mb-4">
+                    📚 Welcome to the Library
+                </h2>
+
+                <a href="/Account/Login"
+                   class="btn btn-primary w-100">
+
+                    Login
+
+                </a>
+
+            </div>
+
+            <div class = "card-body text-center">
+                <h2 class = "mb-4">
+                    📖 Explore our collection
+                </h2>
+
+                <a href="/Books"
+                   class="btn btn-secondary w-100">
+
+                    View Books
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
