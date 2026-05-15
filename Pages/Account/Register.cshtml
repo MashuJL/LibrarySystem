@@ -2,82 +2,83 @@
 @model LibraryApp.Pages.Account.RegisterModel
 @{
     ViewData["Title"] = "Register";
-    Layout = null;
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Register</title>
 
-    <link rel="stylesheet"
-          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-</head>
 
-<body class="bg-dark">
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 70vh;">
 
-    <div class="container mt-5">
+    <div class="card shadow-lg border-0" style="max-width: 420px; width: 100%; border-radius: 18px;">
 
-        <div class="card mx-auto shadow"
-             style="max-width: 400px;">
+        <div class="card-body p-4">
 
-            <div class="card-body">
+            <h2 class="texx-center mb-4 fw-bold" style="color:#c1121f;">
+                📚 Library Registration
+            </h2>
 
-                <h2 class="text-center mb-4">
-                    📚 Library Registration
-                </h2>
+            <form method="post">
 
-                <form method="post">
+                <!--- FULL NAME --->
+                <div class="mb-3">
+                    <label>Full Name</label>
 
-                    <div class="mb-3">
-                        <label>Full Name</label>
+                    <input asp-for="Input.FullName"
+                            class="form-control" />
+                </div>
 
-                        <input asp-for="Input.FullName"
-                               class="form-control" />
-                    </div>
+                <!--- EMAIL --->
+                 <div class="mb-3">
+                    <label>Email</label>
 
-                    <div class="mb-3">
-                        <label>Email</label>
+                    <input asp-for="Input.Email"
+                            class="form-control" />
+                </div>
 
-                        <input asp-for="Input.Email"
-                               class="form-control" />
-                    </div>
+                <!--- PASSWORD --->
+                <div class="mb-3">
+                    <label>Password</label>
 
-                    <div class="mb-3">
-                        <label>Password</label>
+                    <input asp-for="Input.Password"
+                            type="password"
+                            class="form-control" />
+                </div>
 
-                        <input asp-for="Input.Password"
-                               type="password"
-                               class="form-control" />
-                    </div>
+                <!--- CONFIRM PASSWORD --->
+                <div class="mb-3">
+                    <label>Confirm Password</label>
 
-                    <div class="mb-3">
-                        <label>Confirm Password</label>
+                    <input asp-for="Input.ConfirmPassword"
+                            type="password"
+                            class="form-control" />
+                </div>
 
-                        <input asp-for="Input.ConfirmPassword"
-                               type="password"
-                               class="form-control" />
-                    </div>
+                <!--- DATE OF BIRTH --->
+                <div class = "mb-3">
+                    <label>Date of Birth</label>
 
-                    <div class = "mb-3">
-                        <label>Date of Birth</label>
+                    <input asp-for="Input.DateOfBirth"
+                            type="date"
+                            class="form-control" />
+                </div>
 
-                        <input asp-for="Input.DateOfBirth"
-                               type="date"
-                               class="form-control" />
-                    </div>
+                <!--- REGISTER BUTTON --->
+                <button type="submit"
+                        class="btn btn-primary w-100">
 
-                    <button type="submit"
-                            class="btn btn-primary w-100">
+                    Register
+                </button>
+            </form>
 
-                        Register
-                    </button>
+            <!--- LOGIN LINK --->
+            <div class="card-footer text-center bg-white border-0">
 
-                </form>
-
-            </div>
-
+            <small class="text-muted">
+                Already have an account?
+                <a asp-page="/Account/Login" style="color:#c1121f;">
+                    Login
+                </a>
+            </small>
+            
         </div>
-
     </div>
-</body>
-</html>
+</div>

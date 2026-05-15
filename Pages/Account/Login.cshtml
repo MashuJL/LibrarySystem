@@ -2,90 +2,86 @@
 @model LibraryApp.Pages.Account.LoginModel
 @{
     ViewData["Title"] = "Login";
-    Layout = null;
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
 
-    <link rel="stylesheet"
-          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-</head>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 70vh;">
 
-<body class="bg-dark">
+    <div class="card shadow-lg border-0" style="max-width: 420px; width: 100%; border-radius: 18px;">
 
-    <div class="container mt-5">
+        <div class="card-body p-4">
 
-        <div class="card mx-auto shadow"
-             style="max-width: 400px;">
+            <h2 class="text-center mb-4 fw-bold" style="color:#c1121f;">
+                📚 Library Login
+            </h2>
 
-            <div class="card-body">
+            <form method="post">
 
-                <h2 class="text-center mb-4">
-                    📚 Library Login
-                </h2>
+                <!-- EMAIL -->
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
 
-                <form method="post">
-
-                    <div class="mb-3">
-                        <label>Email</label>
-
-                        <input asp-for="Input.Email"
-                               class="form-control" />
-                    </div>
-
-                    <div class="mb-3">
-                        <label>Password</label>
-
-                        <input asp-for="Input.Password"
-                               type="password"
-                               class="form-control" />
-                    </div>
-
-                    <div class="form-check mb-3">
-
-                        <input asp-for="Input.RememberMe"
-                               class="form-check-input" />
-
-                        <label class="form-check-label">
-                            Remember Me
-                        </label>
-
-                    </div>
-
-                    <button type="submit"
-                            class="btn btn-primary w-100">
-
-                        LoginS
-
-                    </button>
-
-                </form>
-
-                <div class = "mt-3 text-center">
-                    <a href = "/Account/ForgotUsername">
-                        Forgot your username?
-                    </a>
+                    <input asp-for="Input.Email"
+                           class="form-control"
+                           placeholder="Enter your email" />
                 </div>
 
-                <div class = "mt-3 text-center">
-                    <a href="/Account/ForgotPassword">
-                        Forgot your password?
-                    </a>
+                <!-- PASSWORD -->
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+
+                    <input asp-for="Input.Password"
+                           type="password"
+                           class="form-control"
+                           placeholder="Enter your password" />
                 </div>
 
-            </div>
+                <!-- REMEMBER ME -->
+                <div class="form-check mb-3">
 
-            <div class = "card-footer text-center">
-                <p class = "text-muted">
-                    Don't have an account? <a href="/Account/Register">Register</a>
-                </p>
-            </div>
+                    <input asp-for="Input.RememberMe"
+                           class="form-check-input" />
 
+                    <label class="form-check-label">
+                        Remember Me
+                    </label>
+
+                </div>
+
+                <!-- LOGIN BUTTON -->
+                <button type="submit"
+                        class="btn btn-primary w-100">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <div class="text-center mt-3">
+
+                <a href="/Account/ForgotUsername">
+                    Forgot username?
+                </a>
+
+                <br />
+
+                <a href="/Account/ForgotPassword">
+                    Forgot password?
+                </a>
+
+            </div>
         </div>
 
-    </div>
+        <div class="card-footer text-center bg-white border-0">
 
-</body>
-</html>
+            <small class="text-muted">
+                Don’t have an account?
+                <a asp-page="/Account/Register" style="color:#c1121f;">
+                    Register
+                </a>
+            </small>
+
+        </div>
+    </div>
+</div>

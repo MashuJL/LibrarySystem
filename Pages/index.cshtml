@@ -2,65 +2,165 @@
 @model LibraryApp.Pages.IndexModel
 @{
     ViewData["Title"] = "Home";
-    Layout = null;
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
+@section Styles
+{
+    <link rel = "stylesheet" href = "~/css/index.css" />
+}
 
-    <link rel="stylesheet"
-          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-</head>
-<body class="bg-light">
 
-    <div class="container mt-5">
+<!--- HERO SECTION --->
 
-        <div class="card mx-auto shadow"
-             style="max-width: 400px;">
+<div class="hero-section text-center text-white d-flex align-items-center">
+    <div class = "container, text-center">
+        <h1 class="display-3 fw-bold">
+            Library Management System
+        </h1>
 
-            <div class="card-body text-center">
+        <p class="lead mt-3">
+            Manage books, loans, and users all in one place.
+        </p>
 
-                <h2 class="mb-4">
-                    📚 Welcome to the Library
-                </h2>
+        <div class="mt-4">
+            <a asp-page="/Books/Index" class="btn btn-light btn-lg me-3">
+                Browse Books
+            </a>
 
-                <a href="/Account/Login"
-                   class="btn btn-primary w-100">
-
+            @if(!User.Identity!.IsAuthenticated)
+            {
+                <a asp-area="Identity"
+                   asp-page="/Account/Login"
+                   class="btn btn-outline-light btn-lg me-2">
                     Login
-
                 </a>
 
+                <a asp-area="Identity"
+                   asp-page="/Account/Register"
+                   class="btn btn-warning btn-lg">
+                    Register
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+<!--- MAIN CONTENT --->
+
+<div class="container mt-5">
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-3">
+                <div class="card-body text">
+                    <h3>📚 Books</h3>
+                    <p>
+                        View and manage the library collection.
+                    </p>
+                </div>
             </div>
+        </div>
 
-            <div class = "card-body text-center">
-                <h2 class = "mb-4">
-                    📖 Explore our collection
-                </h2>
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-3">
+                <div class="card-body text">
+                    <h3>👥 Users</h3>
+                    <p>
+                        Student and admin account management.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-                <a href="/Books"
-                   class="btn btn-secondary w-100">
-
-                    View Books
-                </a>
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-3">
+                <div class="card-body text">
+                    <h3>🔄 Loans</h3>
+                    <p>
+                        Track borrowed and returned books.
+                    </p>
+                </div>
             </div>
         </div>
 
     </div>
 
-    <div class = "container mt-5 text-center">
-        <div class = "mb-4"> 
-            <h2>
-                📚 About this Project
+<! --- NEW BOOKS SECTION --->
+
+    <div class = "row mt-5">
+        <div class="col-12 text-center">
+            <h2> 
+                Whats NEW? 
             </h2>
 
-            <p class = "lead">
-                This is a simple library application built with ASP.NET Core Razor Pages. 
-                It allows users to browse and manage a collection of books. 
-                You can log in to access additional features like adding, editing, and deleting books from the collection.
+            <p class = "section-subtitle">
+                Exlpore the lastest Books added to our collection!
             </p>
+
         </div>
     </div>
-</body>
-</html>
+
+    <!--- BOOK CARDS --->
+    <div class = "row mt-4 g-4">
+        
+        <!--- BOOK 1 --->
+        <div class = "col-md-4">
+            <div class = "card h-100">
+                <img src = "https://via.placeholder.com/400x500"
+                        class = "card-img-top"
+                        alt = "Book Cover" />
+                <div class = "card-body">
+                    
+                    <h5 class = "card-title">
+                        NEW BOOK TITLE
+                    </h5>
+
+                    <p class = "card-text">
+                        NEW BOOK DESCRIPTION
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!--- BOOK 2 --->
+        <div class = "col-md-4">
+            <div class = "card h-100">
+                <img src = "https://via.placeholder.com/400x500"
+                        class = "card-img-top"
+                        alt = "Book Cover" />
+                <div class = "card-body">
+                    
+                    <h5 class = "card-title">
+                        NEW BOOK TITLE
+                    </h5>
+
+                    <p class = "card-text">
+                        NEW BOOK DESCRIPTION
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!--- BOOK 3 --->
+        <div class = "col-md-4">
+            <div class = "card h-100">
+                <img src = "https://via.placeholder.com/400x500"
+                        class = "card-img-top"
+                        alt = "Book Cover" />
+                <div class = "card-body">
+                    
+                    <h5 class = "card-title">
+                        NEW BOOK TITLE
+                    </h5>
+
+                    <p class = "card-text">
+                        NEW BOOK DESCRIPTION
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

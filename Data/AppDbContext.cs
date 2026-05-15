@@ -28,5 +28,8 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
             .WithMany(u => u.Loans)
             .HasForeignKey(l => l.UserId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        /* --- Seed Data --- */
+        modelBuilder.Entity<Book>().HasData();
     }
 }

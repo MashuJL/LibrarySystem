@@ -1,0 +1,142 @@
+/* =========================
+   HOME PAGE STYLES
+========================= */
+
+/* HERO SECTION */
+.hero-section {
+    min-height: 500px;
+
+    background:
+        linear-gradient(
+            rgba(193, 18, 31, 0.85),
+            rgba(120, 0, 10, 0.9)
+        ),
+        url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 0 0 30px 30px;
+
+    padding: 80px 20px;
+
+    margin-bottom: 30px;
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.card {
+    border: none;
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    background-color: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    color: #c1121f;
+    font-weight: 700;
+}
+
+/* =========================
+   NEW BOOK SECTION
+========================= */
+
+.section-title {
+    color: #c1121f;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #666;
+    font-size: 1.05rem;
+}
+
+/* =========================
+   BOOK IMAGES
+========================= */
+
+.card-img-top {
+    height: 350px;
+    object-fit: cover;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary {
+    background-color: #c1121f;
+    border-color: #c1121f;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    padding: 10px 18px;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #a30f1a;
+    border-color: #a30f1a;
+
+    transform: translateY(-1px);
+}
+
+.btn-light {
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        min-height: 400px;
+        padding: 60px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.4rem;
+    }
+
+    .card-img-top {
+        height: 280px;
+    }
+}

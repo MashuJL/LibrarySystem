@@ -38,43 +38,4 @@ app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
 
-using(var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-
-    await SeedRolesAndAdminUser(roleManager, userManager);
-}
-
-async Task SeedRolesAndAdminUser(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
-{
-    // Seed roles
-    var roles = new[] { "Admin", "User" };
-    foreach(var role in roles)
-    {
-        if(!await roleManager.RoleExistsAsync(role))
-            await roleManager.CreateAsync(new IdentityRole(role));
-    }
-
-    // Seed admin user
-    string adminEmail = "admin@example.com";
-    string adminPassword = "Password123!";
-    
-    var admin = await userManager.FindByEmailAsync(adminEmail);
-    if(admin == null)
-    {
-        admin = new ApplicationUser
-        {
-            UserName = adminEmail,
-            Email = adminEmail,
-            FullName = "Admin User",
-            DateJoined = DateTime.UtcNow
-        };
-
-        await userManager.CreateAsync(admin, adminPassword);
-        await userManager.AddToRoleAsync(admin, "Admin");
-    }
-}
-
 app.Run();
