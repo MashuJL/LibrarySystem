@@ -12,21 +12,21 @@ Prerequisites
 Instalation
 
 1. Clone the repository
-  git clone https://github.com/yourusername/LibrarySystem.git
-  cd LibrarySystem
+- git clone https://github.com/yourusername/LibrarySystem.git
+- cd LibrarySystem
 
 2. Install Dependencies
-  dotnet add package Microsoft.EntityFrameworkCore.Sqlite
-  dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+- dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+- dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
 3. Apply database migrations
-dotnet ef database update
+- dotnet ef database update
 
 4. Run the app
-  dotnet run
+- dotnet run
 
 5. Open in Browser
-  http://localhost:5162
+- http://localhost:5162
 
 # Upcoming Features
 - [ ] books page
