@@ -1,0 +1,48 @@
+@page
+@model LibraryApp.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="card shadow-lg border-0" style="max-width: 420px; width: 100%; border-radius: 18px;">
+        <div class="card-body p-4">
+
+            <h2 class="text-center mb-4 fw-bold" style="color:#c1121f;">
+                📚 Forgot Username
+            </h2>
+
+            <form method="post">
+
+                <!-- Full Name -->
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input asp-for="Input.FullName"
+                           class="form-control"
+                           placeholder="Enter your full name" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Date of Birth</label>
+                    <input asp-for="Input.DateOfBirth"
+                           type ="date"
+                           class="form-control"
+                </div>
+
+                <!-- Username Finder -->
+                <button type="submit"
+                        class="btn btn-primary w-100">
+                    Find Username
+                </button>
+            </form>
+
+            <div class="text-center mt-3">
+                <a asp-area="Identity"
+                   href="/Account/Login">
+                    Back to Login
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
